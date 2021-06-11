@@ -14,14 +14,16 @@ export default class LoadScene extends Phaser.Scene {
     
     preload(){
         
-        this.load.image('ball', './images/ballBlue.png');
-        this.load.image('el_B', './images/blue.png');
-        this.load.image('el_G', './images/green.png');
-        this.load.image('el_P', './images/purple.png');
-        this.load.image('el_R', './images/red.png');
-        this.load.image('el_Y', './images/yellow.png');
-        this.load.image('paddle', './images/player.gif');
-        this.load.image('bkground','./images/background.gif')
+        this.load.image('ball', './images/Peng_Boll.png');
+        this.load.image('brick', './images/Peng_bricks.png');
+        this.load.image('player1', './images/Peng_P1.png');
+        this.load.image('player2', './images/Peng_P2.png');
+        this.load.image('bkground','./images/background.png');
+        this.load.image('arpoon','./images/Peng_BoneArpoon.png');
+
+        // background, ball hits player, ball hits brick, arpoon fired, arpoon hits ball, catch points, catch life
+        this.load.audio('BK','./sounds/BK.mp3');
+
     }
     
 }

@@ -1,7 +1,6 @@
 export class Brick extends Phaser.Physics.Arcade.Sprite {
     
     constructor(scene, x, y, texture, hit_count) {
-        
         super(scene, x, y, texture);
         
         this.setOrigin(0);
@@ -10,18 +9,16 @@ export class Brick extends Phaser.Physics.Arcade.Sprite {
         //scene.physics.add.existing(this);
         
         this.hit_count = hit_count;
+        this.setDisplaySize(128,32);
         
         //this.physics.add.existing(this);
         
         //this.body.allowGravity = false;
-        //this.setImmovable(true);
-            
+        //this.setImmovable(true);            
     }
         
     
     update(time){
-        
-        
         
     }
     
@@ -29,11 +26,9 @@ export class Brick extends Phaser.Physics.Arcade.Sprite {
         this.hit_count--;
         
         if(this.hit_count == 0){
-        this.scene.decreaseBrickCount();
-        this.disableBody(true, true);
-            
+            this.scene.decreaseBrickCount();
+            this.destroy();
         }
-        
     }
     
 }

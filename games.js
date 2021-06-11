@@ -10,18 +10,14 @@ const config = {
     
     scene:[LoadScene, MainScene],
     physics: {
-        
         default: 'arcade',
         arcade: {
-            
             gravity: { y: 250 },
             debug: false
-            
         }
+    },
+    pixelArt: true
         
-    }
-    
-    
 }
 
 new Phaser.Game(config);
