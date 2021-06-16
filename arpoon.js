@@ -5,27 +5,31 @@ export class Arpoon extends Phaser.Physics.Arcade.Sprite {
         super(scene, x, y, texture);
         
         scene.add.existing(this);
+        scene.physics.add.existing(this);
+
+        this.playerNumber = 0;
         
+        this.body.allowGravity = false;
+        this.setCollideWorldBounds(true);
+        
+        this.setImmovable(true);        
     }
     
     update(time){
-        console.log(this.y);
-        if (this.y<=200) {
-            this.destroy();
-            
+        //console.log(this.y);
+        if (this.y<=32) {
+            this.scene.repositionHarpoon(this.playerNumber);            
         }
     }
 
-
+    setPlayer(player){
+        this.playerNumber = player;
+    }
+    
     lunch(x, y){
-        
-        this.scene.physics.add.existing(this);
-        //this.setCollideWorldBounds(true);
-        //this.setBounce(1,1);
         this.x = x;
         this.y = y;
         this.setVelocity(0, -600);
-        
     }
  
 }

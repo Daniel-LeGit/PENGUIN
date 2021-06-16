@@ -26,7 +26,6 @@ export class Brick extends Phaser.Physics.Arcade.Sprite {
         this.hit_count--;
         
         if(this.hit_count == 0){
-            this.scene.decreaseBrickCount();
             this.destroy();
         }
     }
